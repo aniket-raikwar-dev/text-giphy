@@ -1,38 +1,247 @@
-.App {
-  text-align: center;
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Roboto Mono', monospace;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.comment-div, .comment-container {
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  align-items: center;
+}
+
+
+.input-box{
+  width: 500px;
+  height: 60px;
+  border: 1px solid gray;
+  outline: none;
+  padding-left: 12px;
+  padding-bottom: 20px;
+  border-radius: 5px;
+  margin-top: 15px;
+}
+
+.modal{
+  width: 700px;
+  height: 100vh;
+  margin-left: 420px;
+  background-color: #333;
+}
+
+#search-container {
+  width: 100%;
+  height: 80px;
+  display: flex;
+}
+
+#search {
+  width: 350px;
+  height: 40px;
+  margin-top: 30px;
+  outline: none;
+  border: 1px solid rgb(8, 8, 8);
+  margin-left: 30px;
+  background-color: white;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.input-gif {
+  width: 320px;
+  border: none;
+  padding-left: 20px;
+  background-color: transparent;
+  outline: none;
+  margin-left: 2px;
+  height: 35px;
+}
+
+#search-icon {
+   width: 20px;
+   margin-right: 10px;
+   cursor: pointer;
+}
+
+
+.btn-post, .btn-giphy, .btn-gif-search, .btn-close{
+  width: 100px;
+  height: 60px;
+  margin-top: 15px;
+  margin-left: 10px;
+  border: none;
+  outline: none;
+  background-color: rgb(34, 37, 236);
   color: white;
+  border-radius: 5px;
+  cursor: pointer;
+  letter-spacing: 2px;
+  font-size: 14px;
 }
 
-.App-link {
-  color: #61dafb;
+.head{
+  margin-left: 0px;
+  margin-top: 10px;
+  letter-spacing: 1px;
+  font-size: 16px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.btn-post:hover, .btn-gif-search:hover{
+  background-color: rgb(42, 111, 238);
 }
+
+.btn-gif-search:hover{
+  background-color: rgb(42, 100, 209);
+}
+
+.btn-giphy {
+  width: 120px;
+  height: 40px;
+  margin-top: 10px;
+  margin-left: 0px;
+  background-color: rgb(6, 129, 88);
+}
+
+
+.btn-giphy:hover{
+  background-color: rgb(5, 95, 65);
+}
+
+.display-result{
+  width: 610px;
+  height: 560px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 10px;
+  background-color: #F0F2F5;
+  border-radius: 5px;
+  position: absolute;
+  overflow-y: auto;
+}
+.display-result::-webkit-scrollbar {
+  display: none;
+}
+
+
+.btn-gif-search {
+  width: 80px;
+  height: 40px;
+  border-radius: 5px;
+  margin-top: 30px;
+  letter-spacing:0.2px;
+  background-color: rgb(42, 111, 238);
+}
+
+.btn-close{
+  width: 100px;
+  height: 40px;
+  margin-left: 30px;
+  background-color: red;
+  border-radius: 0px;
+  border-radius: 5px;
+  margin-top: 2px;
+  margin-bottom: 10px;
+}
+.show-gif-container{
+  margin-top: 10px;
+  background-color: transparent;
+  height: 100%;
+  width: 91%;
+  margin-left: 30px;
+  overflow-y: auto;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.show-gif-container::-webkit-scrollbar{
+  display: none;
+}
+.result-text{
+   width: 90%;
+   min-height: 40px;
+   background-color: rgb(228, 226, 226);
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   margin-top: 15px;
+   margin-bottom: 15px;
+   border-radius: 5px;
+}
+.item-text{
+  font-family: 'Sen', sans-serif;
+  font-size: 14px;
+  font-weight: lighter;
+  letter-spacing: 0.5px;
+  padding-left: 20px;
+}
+.trash{
+  width: 18px;
+  margin-right: 20px;
+  cursor: pointer;
+}
+.div-1{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#cross {
+  padding-right: 10px;
+  cursor: pointer;
+  width: 30px;
+}
+
+
+
+
+@media screen and (max-width: 768px) {
+  .input-box{
+    width: 300px;
+    height: 40px;
+    padding-bottom: 02px;
+    margin-top: 10px;
+  }
+
+  .btn-post{
+    width: 80px;
+    height: 40px;
+    margin-top: 10px;
+  }
+
+  .btn-giphy {
+    width: 100px;
+    height: 40px;
+    margin-bottom: 10px;
+  }
+
+  .display-result{
+    width: 390px;
+    height: 560px;
+  }
+
+ .modal{
+  width: 500px;
+  height: 100vh;
+  margin-left: 0px;
+  background-color: #333;
+ }
+ #search {
+  width: 260px;
+ }
+ .input-gif {
+  width: 240px;
+ }
+ 
+}
+
+
+
+
+
+
+
+
