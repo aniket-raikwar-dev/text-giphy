@@ -18,7 +18,7 @@ const ButtonGiphy = ( {setItems} ) => {
     const fetchData = async () => {
         const results = await axios("https://api.giphy.com/v1/gifs/trending", {
            params: {
-             api_key: "2OHhOWPsFnwvCqCrFJMmgVjcfVb8tX7A"
+             api_key: process.env.REACT_APP_API_KEY
            }
         });
         console.log(results.data.data);
